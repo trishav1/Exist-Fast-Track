@@ -1,0 +1,26 @@
+{
+  "version": "2.5.0",
+  "summary": {
+    "title": "CSSECDV_ValladolidT_Activity 2-1",
+    "owner": "Trisha",
+    "description": "Activity 2-1: Threat Model - Data Flow Diagram",
+    "id": 0
+  },
+  "detail": {
+    "contributors": [],
+    "diagrams": [
+      {
+        "id": 0,
+        "title": "Activity 2-1",
+        "diagramType": "Generic",
+        "placeholder": "New generic diagram description",
+        "thumbnail": "./public/content/images/thumbnail.jpg",
+        "version": "2.5.0",
+        "cells": []
+      }
+    ],
+    "diagramTop": 1,
+    "reviewer": "Trisha",
+    "threatTop": 0
+  }
+}
