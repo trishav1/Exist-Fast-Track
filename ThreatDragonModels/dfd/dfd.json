@@ -840,7 +840,7 @@
             },
             "attrs": {
               "text": {
-                "text": "Customer Browser"
+                "text": "Barista"
               },
               "body": {
                 "stroke": "#333333",
@@ -850,6 +850,7 @@
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 1,
             "ports": {
               "groups": {
                 "top": {
@@ -933,10 +934,9 @@
               ]
             },
             "id": "65876ba3-1a8a-4b7f-bf41-8a46df6557d8",
-            "zIndex": 1,
             "data": {
               "type": "tm.Actor",
-              "name": "Customer Browser",
+              "name": "Barista",
               "description": "",
               "isTrustBoundary": false,
               "outOfScope": false,
@@ -948,7 +948,7 @@
           },
           {
             "position": {
-              "x": 780,
+              "x": 700,
               "y": 0
             },
             "size": {
@@ -967,6 +967,7 @@
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 2,
             "ports": {
               "groups": {
                 "top": {
@@ -1050,7 +1051,6 @@
               ]
             },
             "id": "03d99cb9-433b-4c7d-9204-5cbbe1acf33a",
-            "zIndex": 2,
             "data": {
               "type": "tm.Actor",
               "name": "Payment Gateway",
@@ -1084,6 +1084,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 3,
             "ports": {
               "groups": {
                 "top": {
@@ -1167,7 +1168,6 @@
               ]
             },
             "id": "80f382d4-e087-4c23-a2c2-c256af8adc40",
-            "zIndex": 3,
             "data": {
               "type": "tm.Process",
               "name": "Web application server ",
@@ -1185,8 +1185,8 @@
           },
           {
             "position": {
-              "x": 399.9999999999999,
-              "y": 170
+              "x": 370,
+              "y": 370
             },
             "size": {
               "width": 120,
@@ -1207,6 +1207,7 @@
             },
             "visible": true,
             "shape": "store",
+            "zIndex": 5,
             "ports": {
               "groups": {
                 "top": {
@@ -1290,7 +1291,6 @@
               ]
             },
             "id": "61ffb0f1-44d3-4cb8-9aaa-ea00b1f15623",
-            "zIndex": 5,
             "data": {
               "type": "tm.Store",
               "name": "MongoDB Database",
@@ -1391,7 +1391,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Send order confirmation and tracking ID",
+              "name": "Display pending orders",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
@@ -1404,7 +1404,7 @@
               "threats": []
             },
             "labels": [
-              "Send order confirmation and tracking ID"
+              "Display pending orders"
             ],
             "id": "24395f26-930e-4577-94a4-c0c3ed694d2c",
             "source": {
@@ -1421,7 +1421,7 @@
                 "y": 50
               },
               {
-                "x": 210,
+                "x": 130,
                 "y": 50
               }
             ]
@@ -1446,7 +1446,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Submit order details",
+              "name": "Login and request pending orders",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
@@ -1459,7 +1459,7 @@
               "threats": []
             },
             "labels": [
-              "Submit order details"
+              "Login and request pending orders"
             ],
             "id": "e991e881-4510-4de2-a458-30d8f4c32d81",
             "source": {
@@ -1474,6 +1474,57 @@
               {
                 "x": 240,
                 "y": 0
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Update order status",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "Update order status"
+            ],
+            "id": "65c654de-6d0f-42d3-9410-49bb1965aae7",
+            "source": {
+              "x": -50,
+              "y": 0
+            },
+            "target": {
+              "x": 390,
+              "y": -20
+            },
+            "vertices": [
+              {
+                "x": 160,
+                "y": -110
               }
             ]
           },
@@ -1514,8 +1565,8 @@
             ],
             "id": "901905f6-0d94-4246-a7d9-be64083c7fb7",
             "source": {
-              "x": 460,
-              "y": 100
+              "cell": "80f382d4-e087-4c23-a2c2-c256af8adc40",
+              "port": "dfcc9679-26ba-4447-8a64-8e0846c1d926"
             },
             "target": {
               "cell": "61ffb0f1-44d3-4cb8-9aaa-ea00b1f15623",
@@ -1523,8 +1574,12 @@
             },
             "vertices": [
               {
-                "x": 330,
-                "y": 130
+                "x": 320,
+                "y": 160
+              },
+              {
+                "x": 120,
+                "y": 270
               }
             ]
           },
@@ -1548,7 +1603,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Send payment request",
+              "name": "Return pending order list",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
@@ -1561,21 +1616,21 @@
               "threats": []
             },
             "labels": [
-              "Send payment request"
+              "Return pending order list"
             ],
-            "id": "a26ecf7b-d73a-4d00-8e45-d664834f768a",
+            "id": "7dec2182-c954-4225-bec6-9352d0893cdc",
             "source": {
-              "x": 530,
-              "y": 30
+              "x": 430,
+              "y": 370
             },
             "target": {
-              "cell": "03d99cb9-433b-4c7d-9204-5cbbe1acf33a",
-              "port": "ea221bf9-d3e1-4d88-89c1-f780e848b0db"
+              "cell": "80f382d4-e087-4c23-a2c2-c256af8adc40",
+              "port": "dfcc9679-26ba-4447-8a64-8e0846c1d926"
             },
             "vertices": [
               {
-                "x": 620,
-                "y": -50
+                "x": 500,
+                "y": 230
               }
             ]
           },
@@ -1599,7 +1654,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Return payment status",
+              "name": "Fetch pending customer orders",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
@@ -1612,21 +1667,21 @@
               "threats": []
             },
             "labels": [
-              "Return payment status"
+              "Fetch pending customer orders"
             ],
-            "id": "b45000cd-18a7-4da9-a5d0-dcd968d0e854",
+            "id": "ae417445-6265-4c13-a85a-01f988c19d1a",
             "source": {
-              "x": 530,
-              "y": 30
+              "cell": "80f382d4-e087-4c23-a2c2-c256af8adc40",
+              "port": "dfcc9679-26ba-4447-8a64-8e0846c1d926"
             },
             "target": {
-              "cell": "03d99cb9-433b-4c7d-9204-5cbbe1acf33a",
-              "port": "336277ce-3c7b-41a7-83a4-d511efc8156f"
+              "cell": "61ffb0f1-44d3-4cb8-9aaa-ea00b1f15623",
+              "port": "8d8dc4d8-a203-4d03-badd-56247c246b91"
             },
             "vertices": [
               {
-                "x": 640,
-                "y": 110
+                "x": 320,
+                "y": 230
               }
             ]
           }
