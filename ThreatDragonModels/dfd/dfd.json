@@ -7,15 +7,11 @@
     "id": 0
   },
   "detail": {
-    "contributors": [
-      {
-        "name": "shaimma salic"
-      }
-    ],
+    "contributors": [],
     "diagrams": [
       {
         "id": 0,
-        "title": "Customer Places an Order",
+        "title": "DFD 1 – Customer Places Order",
         "diagramType": "STRIDE",
         "placeholder": "New STRIDE diagram description",
         "thumbnail": "./public/content/images/thumbnail.stride.jpg",
